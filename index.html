@@ -5,16 +5,39 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: http://www.following-and-fishing.eu/ https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">         
        
     <script type="text/javascript" charset="utf-8">
-    // Wait for Cordova to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-    // Cordova is ready
-    //
+var app = {
+    // Application Constructor
+    initialize: function() {
+    this.bindEvents();
+    },
+    bindEvents: function() {
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+    },
+    onDeviceReady: function() {
+        app.receivedEvent('deviceready');
 
-    function onDeviceReady() {
+        // Here, we redirect to the web site.
+        var targetUrl = "http://www.following-and-fishing.eu/app/";
+        var bkpLink = document.getElementById("bkpLink");
+        bkpLink.setAttribute("href", targetUrl);
+        bkpLink.text = targetUrl;
+        window.location.replace(targetUrl);
+},
+    // Note: This code is taken from the Cordova CLI template.
+    receivedEvent: function(id) {
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
 
-        windows.location='http://www.following-and-fishing.eu/app/';        
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
+        console.log('Received Event: ' + id);
     }
+};
+
+app.initialize();
+             
     </script>
 
 </head>
@@ -22,6 +45,19 @@
   <body>
     <div id="title">
              411 training is loading
-    </div>         
+    </div>    
+           
+Verifying connectivity..
+<a id="bkpLink" href="https://cordovahostedweb-starter.azurewebsites.net">cordovahostedweb.azurewebsites.net</a>
+
+<div class="app">
+    <h1>Apache Cordova</h1>
+    <div id="deviceready" class="blink">
+        <p class="event listening">Connecting to Device</p>
+        <p class="event received">Device is Ready</p>
+    </div>
+</div>           
+           
+           
   </body>
 </html>
