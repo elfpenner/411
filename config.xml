@@ -11,6 +11,7 @@ version="1.0.0">
 
         <content src="index.html" />
         <access origin="*" />
+	<allow-navigation href="*" />
 	<platform name="ios">
               <feature name="InAppBrowser">
                 <param name="ios-package" value="CDVInAppBrowser" />
