@@ -6,16 +6,11 @@ version="1.0.0">
         <description>Een testapp om te testen wat allemaal mogelijk is</description>
         <author email="info@deville-internet.nl" href="http://www.deville-internet.nl">de Ville Internet</author>
 	<!-- We'll include the Cordova plugins -->
-	<gap:plugin name="org.apache.cordova.geolocation"/>
-	<gap:plugin name="org.apache.cordova.dialogs"/>
-	<gap:plugin name="com.pushapps.phonegap"/>
-
 
 	<feature name="http://api.phonegap.com/1.0/network"/>
 
         <content src="index.html" />
         <access origin="*" />
-        <access origin="http://www.deville-internet.nl/*" launch-external="yes" />
 	<platform name="ios">
               <feature name="InAppBrowser">
                 <param name="ios-package" value="CDVInAppBrowser" />
