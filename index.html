@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
          
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">        
+  <meta name="viewport" content="width=device-width, initial-scale=1">    
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: http://www.following-and-fishing.eu/ https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">         
        
 <script src="cordova.js"></script>
     <script type="text/javascript" charset="utf-8">
@@ -13,7 +14,7 @@
 
     function onDeviceReady() {
 
-        windows.location="http://www.following-and-fishing.eu/app/";        
+        windows.location.href="http://www.following-and-fishing.eu/app/";        
     }
     </script>
 
